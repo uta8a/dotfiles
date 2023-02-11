@@ -1,3 +1,7 @@
 {
-  "importMap": "./import_map.json"
+  "importMap": "./import_map.json",
+  "tasks": {
+    "deploy": "deno run --allow-env --allow-read --allow-write manager/main.ts deploy",
+    "check": "deno run --allow-env manager/main.ts check"
+  }
 }

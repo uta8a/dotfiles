@@ -1,0 +1,16 @@
+[remind]
+	root = ~/.ghq/github.com/uta8a
+[ghq]
+	root = ~/.ghq
+[user]
+	name = "Masanori Tani"
+	email = "uta8a@uta8a.org"
+[core]
+	editor = vim
+[commit]
+	gpgsign = false # true
+
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !gh auth git-credential
