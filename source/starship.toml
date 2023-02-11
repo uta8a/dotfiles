@@ -1,0 +1,47 @@
+# ~/.config/starship.toml
+
+# Use custom format
+format = """
+$username$hostname: $directory$status$git_branch
+${custom.devbox} """
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+[directory]
+format = "[$path]($style) [$read_only]($read_only_style)"
+style = "bold bg:black"
+truncation_length = 3
+truncation_symbol = ""
+
+[status]
+disabled = false
+format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
+style = "bg:black"
+
+[hostname]
+disabled = false
+format = "[@$hostname](#fbbef5 bold underline)"
+ssh_only = false
+
+[username]
+disabled = false
+format = "[$user]($style)"
+show_always = true
+style_root = "#fbbef5 bold underline"
+style_user = "#fbbef5 bold underline"
+
+[git_branch]
+symbol = "🌱 "
+format = "[$symbol$branch]($style)"
+truncation_symbol = ""
+
+[custom.devbox]
+command = 'if [ "$DEVBOX_SHELL_ENABLED" = "1" ]; then echo "📦 devbox>"; else echo "$"; fi'
+when = true
+style = 'bold white'
+format = '[$output]($style)'
