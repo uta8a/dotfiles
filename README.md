@@ -21,6 +21,7 @@ Execute
 
 ```console
 # TODO: shell script bootstrap
+# curl https://raw.githubusercontent.com/uta8a/dotfiles/main/bootstrap.sh | bash
 ```
 
 # dev
