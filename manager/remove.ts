@@ -9,5 +9,5 @@ await rm.link({ destination: `${home}/.zshrc` });
 await rm.link({ destination: `${home}/.gitconfig` });
 await rm.link({ destination: `${home}/.config/starship.toml` });
 await rm.link({ destination: `${home}/.gnupg/gpg-agent.conf` });
-await rm.link({ destination: `${home}/.sheldon/plugins.toml` });
+await rm.link({ destination: `${home}/.config/sheldon/plugins.toml` });
 await rm.link({ destination: `${home}/.tmux.conf` });

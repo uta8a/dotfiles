@@ -11,7 +11,7 @@ const deploy = defineTask([
   link({ source: "source/gitconfig", destination: `${home}/.gitconfig` }),
   link({ source: "source/starship.toml", destination: `${home}/.config/starship.toml` }),
   link({ source: "source/gpg/gpg-agent.conf", destination: `${home}/.gnupg/gpg-agent.conf` }),
-  link({ source: "source/sheldon.toml", destination: `${home}/.sheldon/plugins.toml` }),
+  link({ source: "source/sheldon.toml", destination: `${home}/.config/sheldon/plugins.toml` }),
   link({ source: "source/tmux.conf", destination: `${home}/.tmux.conf` }),
   /// changeShellはVS Code Devcontainer内でそもそもchshが動かなさそう？
   // changeShell({ destination: "zsh" }),
