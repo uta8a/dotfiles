@@ -14,7 +14,6 @@ const reverseRecord = <
   ) as Record<U, T>
 }
 
-// TODO: もっといい名前つけたい。shellと紛らわしい
 const shells: Record<string, string> = {
   sh: "/bin/sh",
   bash: "/bin/bash",
@@ -64,4 +63,4 @@ export const changeShell = ({ destination }: { destination: string; }): Action =
     const promise = new ShellPromise({ name: destination, ok: true });
     return await promise;
   }
-})
+});
