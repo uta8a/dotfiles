@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "deploy": "deno run --allow-env --allow-read --allow-write manager/main.ts deploy",
-    "check": "deno run --allow-env --allow-read manager/main.ts check",
-    "rm": "deno run --allow-env --allow-read --allow-write manager/remove.ts"
+    "deploy": "deno run --unstable --allow-run --allow-env --allow-read --allow-write manager/main.ts deploy",
+    "check": "deno run --unstable --allow-env --allow-read manager/main.ts check",
+    "rm": "deno run --unstable --allow-env --allow-read --allow-write manager/remove.ts"
   }
 }

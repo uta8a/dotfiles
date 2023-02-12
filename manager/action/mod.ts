@@ -1,1 +1,3 @@
-// re-export
+import { changeShell } from "./change-shell.ts";
+
+export { changeShell };
