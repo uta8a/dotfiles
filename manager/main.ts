@@ -1,5 +1,5 @@
 import { defineTask, link } from "./deps.ts";
-import { changeShell, installRust } from "./action/mod.ts";
+import { changeShell, installRust, installDirenv } from "./action/mod.ts";
 
 const home = Deno.env.get("HOME");
 
@@ -13,8 +13,10 @@ const deploy = defineTask([
   link({ source: "source/gpg/gpg-agent.conf", destination: `${home}/.gnupg/gpg-agent.conf` }),
   link({ source: "source/sheldon.toml", destination: `${home}/.sheldon/plugins.toml` }),
   link({ source: "source/tmux.conf", destination: `${home}/.tmux.conf` }),
-  changeShell({ destination: "zsh" }),
+  /// changeShellはVS Code Devcontainer内でそもそもchshが動かなさそう？
+  // changeShell({ destination: "zsh" }),
   installRust(),
+  installDirenv(),
 ]);
 
 if (Deno.args.includes("deploy")) {
