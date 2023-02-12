@@ -1,5 +1,5 @@
 import { defineTask, link } from "./deps.ts";
-import { changeShell, installRust, installDirenv } from "./action/mod.ts";
+import { changeShell, installRust, installDirenv, installGo } from "./action/mod.ts";
 
 const home = Deno.env.get("HOME");
 
@@ -17,6 +17,7 @@ const deploy = defineTask([
   // changeShell({ destination: "zsh" }),
   installRust(),
   installDirenv(),
+  installGo(),
 ]);
 
 if (Deno.args.includes("deploy")) {
