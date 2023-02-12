@@ -9,18 +9,18 @@ setopt histignorealldups sharehistory
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-. $HOME/.asdf/asdf.sh # asdf
-fpath=(${ASDF_DIR}/completions $fpath) # asdf completion
+# . $HOME/.asdf/asdf.sh # asdf
+# fpath=(${ASDF_DIR}/completions $fpath) # asdf completion
 # Use modern completion system
 autoload -Uz compinit
 compinit
-autoload -U bashcompinit && bashcompinit # awscli completion
-complete -C $HOME/.asdf/shims/aws_completer aws # awscli completion
+# autoload -U bashcompinit && bashcompinit # awscli completion
+# complete -C $HOME/.asdf/shims/aws_completer aws # awscli completion
 
 # zstyle ':completion:*' auto-description 'specify: %d'
 # zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -41,19 +41,19 @@ complete -C $HOME/.asdf/shims/aws_completer aws # awscli completion
 # zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 ## PATH
-export PATH="$PATH:/usr/local/go/bin" # go
+export PATH="$PATH:/usr/local/bin/go/bin" # go
 export PATH="$PATH:$HOME/go/bin" # go get / install go tool
 export VOLTA_HOME="$HOME/.volta" # volta / node
 export PATH="$PATH:$VOLTA_HOME/bin" # volta / node
-export PATH="$PATH:$HOME/.local/bin" # oj / online-judge-tools
+# export PATH="$PATH:$HOME/.local/bin" # oj / online-judge-tools
 export PATH="$PATH:$HOME/.poetry/bin" # poetry / python
 export PATH="$PATH:$HOME/.cargo/bin" # cargo / rust
-export PATH="$PATH:$HOME/filez/tmp/buildg" # buildg / dockerfile debug tool
-export PATH="$PATH:$HOME/filez/zig/zig-linux-x86_64-0.10.0-dev.2998+a45592715" # zig / ziglang
+# export PATH="$PATH:$HOME/filez/tmp/buildg" # buildg / dockerfile debug tool
+# export PATH="$PATH:$HOME/filez/zig/zig-linux-x86_64-0.10.0-dev.2998+a45592715" # zig / ziglang
 export PATH="$PATH:$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin" # LSP / rust-analyzer
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$PATH:$DENO_INSTALL/bin"
-export JAVA_HOME=`echo $(dirname $(readlink $(readlink $(which java)))) | sed -e 's/\/bin$//g' | sed -e 's/\/jre$//g'`
+# export JAVA_HOME=`echo $(dirname $(readlink $(readlink $(which java)))) | sed -e 's/\/bin$//g' | sed -e 's/\/jre$//g'`
 ## Env
 export EDITOR=vim
 
