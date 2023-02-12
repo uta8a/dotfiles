@@ -1,5 +1,5 @@
 import { defineTask, link } from "./deps.ts";
-import { changeShell } from "./action/mod.ts";
+import { changeShell, installRust } from "./action/mod.ts";
 
 const home = Deno.env.get("HOME");
 
@@ -14,6 +14,7 @@ const deploy = defineTask([
   link({ source: "source/sheldon.toml", destination: `${home}/.sheldon/plugins.toml` }),
   link({ source: "source/tmux.conf", destination: `${home}/.tmux.conf` }),
   changeShell({ destination: "zsh" }),
+  installRust(),
 ]);
 
 if (Deno.args.includes("deploy")) {
