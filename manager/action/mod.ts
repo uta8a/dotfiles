@@ -4,5 +4,6 @@ import { installDirenv } from "./direnv.ts"
 import { installGo } from "./go.ts";
 import { installPoetry } from "./poetry.ts";
 import { installSheldon } from "./sheldon.ts";
+import { installStarship } from "./starship.ts";
 
-export { changeShell, installRust, installDirenv, installGo, installPoetry, installSheldon };
+export { changeShell, installRust, installDirenv, installGo, installPoetry, installSheldon, installStarship };
