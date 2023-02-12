@@ -1,5 +1,5 @@
 import { defineTask, link } from "./deps.ts";
-import { changeShell, installRust, installDirenv, installGo, installPoetry, installSheldon, installStarship } from "./action/mod.ts";
+import { changeShell, installRust, installDirenv, installGo, installPoetry, installSheldon, installStarship, installVolta } from "./action/mod.ts";
 
 const home = Deno.env.get("HOME");
 
@@ -21,6 +21,7 @@ const deploy = defineTask([
   installPoetry(),
   installSheldon(),
   installStarship(),
+  installVolta(),
 ]);
 
 if (Deno.args.includes("deploy")) {
