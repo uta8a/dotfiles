@@ -3,5 +3,6 @@ import { installRust } from "./rust.ts";
 import { installDirenv } from "./direnv.ts"
 import { installGo } from "./go.ts";
 import { installPoetry } from "./poetry.ts";
+import { installSheldon } from "./sheldon.ts";
 
-export { changeShell, installRust, installDirenv, installGo, installPoetry };
+export { changeShell, installRust, installDirenv, installGo, installPoetry, installSheldon };
