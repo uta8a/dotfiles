@@ -43,6 +43,7 @@ class ShellPromise implements PromiseLike<Stat> {
 
 export const changeShell = ({ destination }: { destination: string; }): Action => ({
   run: async () => {
+    // Deno.Command needs unstable
     const chsh = new Deno.Command("sudo", { args: ["chsh", "-s", shells[destination]] });
     const output = await chsh.output();
     if (!output.success) {
