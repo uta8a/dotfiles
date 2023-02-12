@@ -10,4 +10,5 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # git clone dotfiles
 # deno task rm
 # deno task deploy
+# source ~/.zshrc
 # deno task check
