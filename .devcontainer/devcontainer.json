@@ -1,12 +1,12 @@
 {
-	"name": "Ubuntu",
-	"image": "mcr.microsoft.com/devcontainers/base:jammy",
-	"postCreateCommand": ". ${containerWorkspaceFolder}/.devcontainer/scripts/post-create.sh",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"denoland.vscode-deno"
-			]
-		}
-	}
+  "name": "Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "postCreateCommand": ". ${containerWorkspaceFolder}/.devcontainer/scripts/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "denoland.vscode-deno"
+      ]
+    }
+  }
 }

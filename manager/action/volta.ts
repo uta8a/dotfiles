@@ -5,14 +5,14 @@ export const installVolta = (): Action => ({
     const p = Deno.run({
       cmd: ["bash"],
       stdout: "piped",
-      stdin: "piped"
+      stdin: "piped",
     });
 
     const install = "curl https://get.volta.sh | bash";
     await p.stdin.write(new TextEncoder().encode(install));
 
     await p.stdin.close();
-    const output = await p.output()
+    const output = await p.output();
     if (!(await p.status()).success) {
       throw new Error(new TextDecoder().decode(output));
     }
@@ -24,11 +24,15 @@ export const installVolta = (): Action => ({
     try {
       output = await checker.output();
     } catch (e) {
-      return { name: 'volta', ok: false, message: e.message };
+      return { name: "volta", ok: false, message: e.message };
     }
     if (!output.success) {
-      return { name: 'volta', ok: false, message: new TextDecoder().decode(output.stderr) }
+      return {
+        name: "volta",
+        ok: false,
+        message: new TextDecoder().decode(output.stderr),
+      };
     }
-    return { name: 'volta', ok: true };
-  }
+    return { name: "volta", ok: true };
+  },
 });

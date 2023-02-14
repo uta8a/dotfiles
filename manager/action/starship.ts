@@ -5,14 +5,14 @@ export const installStarship = (): Action => ({
     const p = Deno.run({
       cmd: ["bash"],
       stdout: "piped",
-      stdin: "piped"
+      stdin: "piped",
     });
 
     const install = "curl -sS https://starship.rs/install.sh | sh -s -- -y";
     await p.stdin.write(new TextEncoder().encode(install));
 
     await p.stdin.close();
-    const output = await p.output()
+    const output = await p.output();
     if (!(await p.status()).success) {
       throw new Error(new TextDecoder().decode(output));
     }
@@ -24,11 +24,15 @@ export const installStarship = (): Action => ({
     try {
       output = await checker.output();
     } catch (e) {
-      return { name: 'starship', ok: false, message: e.message };
+      return { name: "starship", ok: false, message: e.message };
     }
     if (!output.success) {
-      return { name: 'starship', ok: false, message: new TextDecoder().decode(output.stderr) }
+      return {
+        name: "starship",
+        ok: false,
+        message: new TextDecoder().decode(output.stderr),
+      };
     }
-    return { name: 'starship', ok: true };
-  }
+    return { name: "starship", ok: true };
+  },
 });

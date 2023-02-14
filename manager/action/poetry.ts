@@ -5,14 +5,14 @@ export const installPoetry = (): Action => ({
     const p = Deno.run({
       cmd: ["bash"],
       stdout: "piped",
-      stdin: "piped"
+      stdin: "piped",
     });
 
     const install = "curl -sSL https://install.python-poetry.org | python3 -";
     await p.stdin.write(new TextEncoder().encode(install));
 
     await p.stdin.close();
-    const output = await p.output()
+    const output = await p.output();
     if (!(await p.status()).success) {
       throw new Error(new TextDecoder().decode(output));
     }
@@ -24,11 +24,15 @@ export const installPoetry = (): Action => ({
     try {
       output = await checker.output();
     } catch (e) {
-      return { name: 'poetry', ok: false, message: e.message };
+      return { name: "poetry", ok: false, message: e.message };
     }
     if (!output.success) {
-      return { name: 'poetry', ok: false, message: new TextDecoder().decode(output.stderr) }
+      return {
+        name: "poetry",
+        ok: false,
+        message: new TextDecoder().decode(output.stderr),
+      };
     }
-    return { name: 'poetry', ok: true };
-  }
+    return { name: "poetry", ok: true };
+  },
 });

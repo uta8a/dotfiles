@@ -1,5 +1,14 @@
 import { defineTask, link } from "./deps.ts";
-import { changeShell, installRust, installDirenv, installGo, installPoetry, installSheldon, installStarship, installVolta } from "./action/mod.ts";
+import {
+  changeShell,
+  installDirenv,
+  installGo,
+  installPoetry,
+  installRust,
+  installSheldon,
+  installStarship,
+  installVolta,
+} from "./action/mod.ts";
 
 const home = Deno.env.get("HOME");
 
@@ -9,9 +18,18 @@ const deploy = defineTask([
   link({ source: "source/bashrc", destination: `${home}/.bashrc` }),
   link({ source: "source/zshrc", destination: `${home}/.zshrc` }),
   link({ source: "source/gitconfig", destination: `${home}/.gitconfig` }),
-  link({ source: "source/starship.toml", destination: `${home}/.config/starship.toml` }),
-  link({ source: "source/gpg/gpg-agent.conf", destination: `${home}/.gnupg/gpg-agent.conf` }),
-  link({ source: "source/sheldon.toml", destination: `${home}/.config/sheldon/plugins.toml` }),
+  link({
+    source: "source/starship.toml",
+    destination: `${home}/.config/starship.toml`,
+  }),
+  link({
+    source: "source/gpg/gpg-agent.conf",
+    destination: `${home}/.gnupg/gpg-agent.conf`,
+  }),
+  link({
+    source: "source/sheldon.toml",
+    destination: `${home}/.config/sheldon/plugins.toml`,
+  }),
   link({ source: "source/tmux.conf", destination: `${home}/.tmux.conf` }),
   /// changeShellはVS Code Devcontainer内でそもそもchshが動かなさそう？
   // changeShell({ destination: "zsh" }),

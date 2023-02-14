@@ -5,14 +5,15 @@ export const installSheldon = (): Action => ({
     const p = Deno.run({
       cmd: ["bash"],
       stdout: "piped",
-      stdin: "piped"
+      stdin: "piped",
     });
 
-    const install = "curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin";
+    const install =
+      "curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin";
     await p.stdin.write(new TextEncoder().encode(install));
 
     await p.stdin.close();
-    const output = await p.output()
+    const output = await p.output();
     if (!(await p.status()).success) {
       throw new Error(new TextDecoder().decode(output));
     }
@@ -24,11 +25,15 @@ export const installSheldon = (): Action => ({
     try {
       output = await checker.output();
     } catch (e) {
-      return { name: 'sheldon', ok: false, message: e.message };
+      return { name: "sheldon", ok: false, message: e.message };
     }
     if (!output.success) {
-      return { name: 'sheldon', ok: false, message: new TextDecoder().decode(output.stderr) }
+      return {
+        name: "sheldon",
+        ok: false,
+        message: new TextDecoder().decode(output.stderr),
+      };
     }
-    return { name: 'sheldon', ok: true };
-  }
+    return { name: "sheldon", ok: true };
+  },
 });

@@ -1,4 +1,4 @@
-import * as rm from './remove/mod.ts'
+import * as rm from "./remove/mod.ts";
 
 const home = Deno.env.get("HOME");
 

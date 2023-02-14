@@ -1,4 +1,9 @@
 {
+  "fmt": {
+    "options": {
+      "semiColons": true
+    }
+  },
   "tasks": {
     "deploy": "deno run --unstable --allow-run --allow-env --allow-read --allow-write manager/main.ts deploy",
     "check": "deno run --unstable --allow-run --allow-env --allow-read manager/main.ts check",

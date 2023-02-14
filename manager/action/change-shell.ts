@@ -11,14 +11,14 @@ const reverseRecord = <
       value,
       key,
     ]),
-  ) as Record<U, T>
-}
+  ) as Record<U, T>;
+};
 
 const shells: Record<string, string> = {
   sh: "/bin/sh",
   bash: "/bin/bash",
   zsh: "/bin/zsh",
-}
+};
 
 class ShellPromise implements PromiseLike<Stat> {
   readonly #promise: Promise<Stat>;
@@ -35,16 +35,20 @@ class ShellPromise implements PromiseLike<Stat> {
     onRejected?:
       | ((reason: unknown) => Result2 | PromiseLike<Result2>)
       | undefined
-      | null
+      | null,
   ): Promise<Result1 | Result2> {
     return this.#promise.then(onFulfilled, onRejected);
   }
 }
 
-export const changeShell = ({ destination }: { destination: string; }): Action => ({
+export const changeShell = (
+  { destination }: { destination: string },
+): Action => ({
   run: async () => {
     // Deno.Command needs unstable
-    const chsh = new Deno.Command("sudo", { args: ["chsh", "-s", shells[destination]] });
+    const chsh = new Deno.Command("sudo", {
+      args: ["chsh", "-s", shells[destination]],
+    });
     const output = await chsh.output();
     if (!output.success) {
       throw new Error(new TextDecoder().decode(output.stderr));
@@ -54,14 +58,18 @@ export const changeShell = ({ destination }: { destination: string; }): Action =
     const target = Deno.env.get("SHELL");
 
     if (!target) {
-      return { name: destination, ok: false, message: '$SHELL is not set.' };
+      return { name: destination, ok: false, message: "$SHELL is not set." };
     }
     const checkShells = reverseRecord(shells);
     if (checkShells[target] !== destination) {
-      return { name: destination, ok: false, message: `$SHELL=${checkShells[target]} is not ${destination}.` };
+      return {
+        name: destination,
+        ok: false,
+        message: `$SHELL=${checkShells[target]} is not ${destination}.`,
+      };
     }
     // return PromiseLike to avoid warning
     const promise = new ShellPromise({ name: destination, ok: true });
     return await promise;
-  }
+  },
 });
