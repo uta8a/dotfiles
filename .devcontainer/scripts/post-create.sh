@@ -1,10 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
-set -ue
+set -eux -o pipefail
 
-curl -fsSL https://deno.land/x/install/install.sh | sh
-
-echo 'export DENO_INSTALL="$HOME/.deno"' >> ~/.bashrc
-echo 'export PATH="$DENO_INSTALL/bin:$PATH"' >> ~/.bashrc
-
-exec /bin/bash --login
+# install dotfiles
