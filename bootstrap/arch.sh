@@ -1,7 +1,8 @@
 #!/bin/sh
 set -euxo pipefail
 
-pueued &
+# 初回のみpueuedを起動
+# pueued &
 
 list=$(cat arch.yaml | yq '.tool[]')
 for item in $list
