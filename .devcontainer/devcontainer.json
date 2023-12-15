@@ -1,12 +1,13 @@
 {
-  "name": "Ubuntu",
-  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "name": "ArchLinux",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "postCreateCommand": ". ${containerWorkspaceFolder}/.devcontainer/scripts/post-create.sh",
+  "remoteUser": "dotfiles-dev",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "denoland.vscode-deno"
-      ]
+      "extensions": ["denoland.vscode-deno"]
     }
   }
 }

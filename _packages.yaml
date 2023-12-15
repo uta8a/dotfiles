@@ -1,0 +1,260 @@
+metadata:
+  name: dotfiles for Arch Linux (x86_64)
+tool:
+  - name: yay
+    metadata:
+      ref: https://github.com/Jguer/yay
+      priority: 10
+  - name: xremap
+    metadata:
+      ref: https://github.com/k0kubun/xremap
+  - name: jenv
+    metadata:
+      ref: https://github.com/jenv/jenv
+  - name: deno
+    metadata:
+      ref: https://github.com/denoland/deno
+  - name: volta
+    metadata:
+      ref: https://github.com/volta-cli/volta
+      managed_by: aqua
+  - name: commitlint
+    metadata:
+      ref: https://github.com/conventional-changelog/commitlint
+      managed_by: npm
+  - name: wrangler
+    metadata:
+      ref: https://github.com/cloudflare/workers-sdk
+      managed_by: npm
+  - name: go
+    metadata:
+      ref: https://github.com/golang/go
+      managed_by: aqua
+  - name: task
+    metadata:
+      ref: https://github.com/go-task/task
+      managed_by: aqua
+  - name: rye
+    metadata:
+      ref: https://github.com/mitsuhiko/rye
+  - name: python
+    metadata:
+      ref: https://github.com/python/cpython
+      managed_by: rye
+  - name: online-judge-tools
+    metadata:
+      ref: https://github.com/online-judge-tools/oj
+  - name: rustup
+    metadata:
+      ref: https://github.com/rust-lang/rustup
+  - name: rust
+    metadata:
+      ref: https://github.com/rust-lang/rust
+      managed_by: rustup
+  - name: git-remind
+    metadata:
+      ref: https://github.com/uta8a/git-remind
+      managed_by: cargo
+  - name: mdbook
+    metadata:
+      ref: https://github.com/rust-lang/mdBook
+      managed_by: cargo
+  - name: tv
+    metadata:
+      ref: https://github.com/uzimaru0000/tv
+      managed_by: cargo
+  - name: imagemagick
+  - name: ffmpeg
+  - name: cloudflared
+    metadata:
+      ref: https://github.com/cloudflare/cloudflared
+  - name: emacs
+  - name: gh
+    metadata:
+      ref: https://github.com/cli/cli
+      managed_by: aqua
+  - name: htop
+    metadata:
+      ref: https://github.com/htop-dev/htop
+  - name: neofetch
+    metadata:
+      ref: https://github.com/dylanaraps/neofetch
+  - name: wezterm
+    metadata:
+      ref: https://github.com/wez/wezterm
+  - name: yq
+    metadata:
+      ref: https://github.com/mikefarah/yq
+      managed_by: aqua
+  - name: jq
+    metadata:
+      ref: https://github.com/jqlang/jq
+  - name: zig
+    metadata:
+      ref: https://github.com/ziglang/zig
+  - name: keybase
+    metadata:
+      ref: https://github.com/keybase/client
+  - name: opam
+    metadata:
+      ref: https://github.com/ocaml/opam
+  - name: ocaml
+    metadata:
+      ref: https://github.com/ocaml/ocaml
+      managed_by: opam
+  - name: awscli
+    metadata:
+      ref: https://github.com/aws/aws-cli
+  - name: frum
+    metadata:
+      ref: https://github.com/TaKO8Ki/frum
+  - name: ruby
+    metadata:
+      ref: https://github.com/ruby/ruby
+      managed_by: frum
+  - name: terraform
+    metadata:
+      ref: https://github.com/hashicorp/terraform
+  - name: opentofu
+    metadata:
+      ref: https://github.com/opentofu/opentofu
+  - name: asdf
+    metadata:
+      ref: https://github.com/asdf-vm/asdf
+  - name: fstar
+    metadata:
+      ref: https://github.com/FStarLang/FStar
+  - name: nix
+    metadata:
+      ref: https://github.com/NixOS/nix
+  - name: home-manager
+    metadata:
+      ref: https://github.com/nix-community/home-manager
+  - name: code
+    metadata:
+      ref: https://github.com/microsoft/vscode
+  - name: bat
+    metadata:
+      ref: https://github.com/sharkdp/bat
+  - name: helix
+    metadata:
+      ref: https://github.com/helix-editor/helix
+  - name: ripgrep
+    metadata:
+      ref: https://github.com/BurntSushi/ripgrep
+  - name: tokei
+    metadata:
+      ref: https://github.com/XAMPPRocky/tokei
+  - name: coursier
+    metadata:
+      ref: https://github.com/coursier/coursier
+  - name: scala
+    metadata:
+      ref: https://github.com/lampepfl/dotty
+      managed_by: coursier
+  - name: aqua
+    metadata:
+      ref: https://github.com/aquaproj/aqua
+      priority: 10
+  - name: kind
+    metadata:
+      ref: https://github.com/kubernetes-sigs/kind
+  - name: hackmd-cli
+    metadata:
+      ref: https://github.com/hackmdio/hackmd-cli
+      managed_by: npm
+  - name: devcontainer-cli
+    metadata:
+      ref: https://github.com/devcontainers/cli
+      managed_by: npm
+  - name: aws-cdk
+    metadata:
+      ref: https://github.com/aws/aws-cdk
+      managed_by: npm
+  - name: marp
+    metadata:
+      ref: https://github.com/marp-team/marp
+      managed_by: npm
+  - name: slidev
+    metadata:
+      ref: https://github.com/slidevjs/slidev
+      managed_by: npm
+  - name: elm
+    metadata:
+      ref: https://github.com/elm/compiler
+  - name: elm-live
+    metadata:
+      ref: https://github.com/wking-io/elm-live
+      managed_by: npm
+  - name: imgcat
+    metadata:
+      ref: https://github.com/danielgatis/imgcat
+  - name: sheldon
+    metadata:
+      ref: https://github.com/rossmacarthur/sheldon
+  - name: fzf
+    metadata:
+      ref: https://github.com/junegunn/fzf
+  - name: kubectl
+    metadata:
+      ref: https://github.com/kubernetes/kubectl
+  - name: radare2
+    metadata:
+      ref: https://github.com/radareorg/radare2
+  - name: starship
+    metadata:
+      ref: https://github.com/starship/starship
+  - name: ghq
+    metadata:
+      ref: https://github.com/x-motemen/ghq
+  - name: ranger
+    metadata:
+      ref: https://github.com/ranger/ranger
+  - name: flameshot
+    metadata:
+      ref: https://github.com/flameshot-org/flameshot
+  - name: ueli
+    metadata:
+      ref: https://github.com/oliverschwendener/ueli
+  - name: chromium
+  - name: firefox
+  - name: lxd
+  - name: multipass
+  - name: docker
+  - name: boost-note
+    metadata:
+      ref: https://github.com/BoostIO/BoostNote-App
+  - name: espanso
+    metadata:
+      ref: https://github.com/espanso/espanso
+  - name: copy-q
+    metadata:
+      ref: https://github.com/hluk/CopyQ
+  - name: zed
+    metadata:
+      ref: https://zed.dev/blog
+  - name: asciinema
+    metadata:
+      ref: https://github.com/asciinema/asciinema
+  - name: binwalk
+  - name: cloc
+  - name: curl
+  - name: direnv
+    metadata:
+      ref: https://github.com/direnv/direnv
+  - name: gauche
+  - name: gnupg
+  - name: k6
+    metadata:
+      ref: https://github.com/grafana/k6
+  - name: neovim
+  - name: tig
+  - name: tree
+  - name: wget
+file:
+  - name: .gitconfig
+    metadata:
+      path: ~/.gitconfig
+    cmd:
+      - name: diff
+        zsh: git diff --no-index --color-words ~/.gitconfig .gitconfig
