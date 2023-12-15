@@ -1,0 +1,6 @@
+tool:
+  - yay
+  - xremap
+  - aqua
+file:
+  - zshrc
