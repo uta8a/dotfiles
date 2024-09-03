@@ -1,0 +1,6 @@
+base
+base-devel
+git
+sudo
+vim
+zsh
