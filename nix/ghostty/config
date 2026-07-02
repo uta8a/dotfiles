@@ -1,0 +1,11 @@
+# ~/.config/ghostty/config.ghostty
+
+# 疑似 profile: virtual-monorepo codex x3
+keybind = cmd+shift+u=text:~/.ghq/github.com/uta8a/virtual-monorepo/start-ghostty.sh\r
+keybind = chain=new_split:right
+keybind = chain=goto_split:right
+keybind = chain=text:~/.ghq/github.com/uta8a/virtual-monorepo/start-ghostty.sh\r
+keybind = chain=new_split:right
+keybind = chain=goto_split:right
+keybind = chain=text:~/.ghq/github.com/uta8a/virtual-monorepo/start-ghostty.sh\r
+keybind = chain=equalize_splits
