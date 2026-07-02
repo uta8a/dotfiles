@@ -21,7 +21,7 @@ macOS の bootstrap:
 macOS で Home Manager を直接使う場合:
 
 ```sh
-home-manager switch -f ./macos/home.nix
+home-manager switch -I nixpkgs=channel:nixpkgs -f ./macos/home.nix
 ```
 
 Ghostty 設定は Home Manager から配布する。
