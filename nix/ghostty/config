@@ -1,5 +1,42 @@
 # ~/.config/ghostty/config.ghostty
 
+theme = Arthur
+# theme = Builtin Solarized Light
+
+font-family = PlemolJP Console NF Regular
+font-feature = -dlig
+font-size = 19
+
+font-style-bold = true
+font-style-italic = false
+font-style-bold-italic = false
+
+font-thicken = true
+font-thicken-strength = 0
+
+alpha-blending = linear
+
+adjust-cell-width = -1
+adjust-cell-height = 1
+
+# macOS
+macos-titlebar-style = hidden
+macos-window-shadow = false
+
+# Shell
+shell-integration-features = no-cursor
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+cursor-opacity = 0.8
+
+# Other
+mouse-hide-while-typing = true
+# resize-overlay = never
+window-step-resize = false
+
 # 疑似 profile: virtual-monorepo codex x3
 keybind = cmd+shift+u=text:~/.ghq/github.com/uta8a/virtual-monorepo/start-ghostty.sh\r
 keybind = chain=new_split:right
