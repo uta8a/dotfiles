@@ -20,4 +20,4 @@ if ! command -v home-manager >/dev/null 2>&1; then
   nix-shell '<home-manager>' -A install
 fi
 
-home-manager switch -I nixpkgs=channel:nixpkgs -f "$repo_root/home.nix"
+home-manager switch -b backup -I nixpkgs=channel:nixpkgs -f "$repo_root/home.nix"
