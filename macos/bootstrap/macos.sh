@@ -4,8 +4,8 @@ set -euxo pipefail
 repo_root=$(cd "$(dirname "$0")/.." && pwd)
 
 if ! command -v nix >/dev/null 2>&1; then
-  echo "nix command not found" >&2
-  exit 1
+  sh <(curl -L https://nixos.org/nix/install)
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 fi
 
 if ! command -v home-manager >/dev/null 2>&1; then

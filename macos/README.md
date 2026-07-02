@@ -8,4 +8,4 @@ Home Manager のエントリポイント:
 home-manager switch -f ./macos/home.nix
 ```
 
-bootstrap は `home-manager` が未インストールなら、Home Manager の channel を追加して install してから適用する。
+bootstrap は `nix` が未インストールなら先に Nix を入れ、`home-manager` が未インストールなら Home Manager を install してから適用する。
