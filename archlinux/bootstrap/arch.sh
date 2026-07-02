@@ -1,6 +1,8 @@
 #!/bin/sh
 set -euxo pipefail
 
+cd "$(dirname "$0")/.."
+
 # 初回のみpueuedを起動
 # pueued &
 
