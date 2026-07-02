@@ -46,3 +46,8 @@ keybind = chain=new_split:right
 keybind = chain=goto_split:right
 keybind = chain=text:~/.ghq/github.com/uta8a/virtual-monorepo/start-ghostty.sh\r
 keybind = chain=equalize_splits
+
+# Raycast helper for deterministic 3-split setup.
+keybind = cmd+alt+ctrl+shift+1=new_split:right
+keybind = cmd+alt+ctrl+shift+2=goto_split:right
+keybind = cmd+alt+ctrl+shift+3=equalize_splits
